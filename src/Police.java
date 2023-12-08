@@ -7,6 +7,16 @@ public class Police implements RPGCharacter {
     int attack;
     int position;
 
+
+    /*
+     *
+     * @param name : รับชื่อของผู้เล่นที่เป็นโจร
+     * @param HP : ระดับพลังชีวิต เมื่อเลือกอาชีพนี้
+     * @param speed : ความเร็วของอาชีพนี้
+     * @param attack : พลังโจมตีเมื่อเลิอกอาชีพนี้
+     * @param position : ตำเเหน่งที่จะเริ่ม action โดยจะ default เป็นจุดเริ่มต้นก่อน
+     */
+
     public Police(String name, int HP, int speed, int attack, int position) {
         this.name = name;
         this.HP = HP;

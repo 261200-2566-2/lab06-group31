@@ -7,6 +7,7 @@ class Vehicle implements Accessory {
 
     @Override
     public void applyEffect(RPGCharacter character) {
+        // บอกว่ามีการใช้ vehicle ที่สร้างรึยัง
         System.out.println("Applying " + name + " to " + character.getClass().getSimpleName());
     }
 }

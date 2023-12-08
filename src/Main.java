@@ -29,7 +29,7 @@ public class Main {
         System.out.println("Choose character: P for Police, T for Thief");
         String choice = scanner.nextLine();
         RPGCharacter selectedCharacter = (choice.equalsIgnoreCase("P")) ? p : t;
-
+        // create Accessory in the game
         Accessory weapon = new Weapon("Gun");
         Accessory vehicle = new Vehicle("Scooter");
         Accessory dopeDrink = new DopeDrink("M150");
