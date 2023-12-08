@@ -7,11 +7,7 @@ public class Police implements RPGCharacter {
     int attack;
     int position;
 
-
-
     /*
-
-     *
      * @param name : รับชื่อของผู้เล่นที่เป็นโจร
      * @param HP : ระดับพลังชีวิต เมื่อเลือกอาชีพนี้
      * @param speed : ความเร็วของอาชีพนี้
@@ -41,19 +37,6 @@ public class Police implements RPGCharacter {
         return name;
     }
 
- public int getHP(){
-     return HP;
- }
-
- public int getPosition(){
-     return position;
- }
-
- public String getName(){
-     return name;
- }
-
-
     @Override
     public void attacked() {
         speed -= 5;
@@ -81,8 +64,6 @@ public class Police implements RPGCharacter {
         position += speed;
         System.out.println(name + " calculates distance.");
     }
-
-}
 
 }
 
