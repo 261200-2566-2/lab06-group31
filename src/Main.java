@@ -38,5 +38,11 @@ public class Main {
             case "D" -> dopeDrink;
             default -> null;
         };
+
+
+        System.out.println("***************************");
+
+        System.out.println("You wins!");
+
     }
 }
