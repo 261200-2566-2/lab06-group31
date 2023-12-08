@@ -8,7 +8,9 @@ public class Police implements RPGCharacter {
     int position;
 
 
-    /**
+
+    /*
+
      *
      * @param name : รับชื่อของผู้เล่นที่เป็นโจร
      * @param HP : ระดับพลังชีวิต เมื่อเลือกอาชีพนี้
@@ -16,6 +18,8 @@ public class Police implements RPGCharacter {
      * @param attack : พลังโจมตีเมื่อเลิอกอาชีพนี้
      * @param position : ตำเเหน่งที่จะเริ่ม action โดยจะ default เป็นจุดเริ่มต้นก่อน
      */
+
+
     public Police(String name, int HP, int speed, int attack, int position) {
         this.name = name;
         this.HP = HP;
@@ -23,6 +27,7 @@ public class Police implements RPGCharacter {
         this.attack = attack;
         this.position = position;
     }
+
 
     public int getHP(){
         return HP;
@@ -35,6 +40,19 @@ public class Police implements RPGCharacter {
     public String getName(){
         return name;
     }
+
+ public int getHP(){
+     return HP;
+ }
+
+ public int getPosition(){
+     return position;
+ }
+
+ public String getName(){
+     return name;
+ }
+
 
     @Override
     public void attacked() {
@@ -54,10 +72,17 @@ public class Police implements RPGCharacter {
         attack += 10;
         System.out.println(name + " uses a buff.");
     }
+
     //----------------------------------------------
+
+
     @Override
     public void calculateDistance() {
         position += speed;
         System.out.println(name + " calculates distance.");
     }
+
 }
+
+}
+

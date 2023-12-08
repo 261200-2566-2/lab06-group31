@@ -7,6 +7,7 @@ public class Thief implements RPGCharacter {
     int attack;
     int position;
 
+
     public int getHP(){   // postcondition : HP ของตัวละคร
         return HP;
     }
@@ -18,7 +19,8 @@ public class Thief implements RPGCharacter {
     }
 
 
-    /**
+
+    /*
      *
      * @param name : รับชื่อของผู้เล่นที่เป็นโจร
      * @param HP : ระดับพลังชีวิต เมื่อเลือกอาชีพนี้
@@ -26,6 +28,17 @@ public class Thief implements RPGCharacter {
      * @param attack : พลังโจมตีเมื่อเลิอกอาชีพนี้
      * @param position : ตำเเหน่งที่จะเริ่ม action โดยจะ default เป็นจุดเริ่มต้นก่อน
      */
+
+    public int getHP(){
+        return HP;
+    }
+    public int getPosition(){
+        return position;
+    }
+    public String getName(){
+        return name;
+    }
+
     public Thief(String name, int HP, int speed, int attack, int position) {
         this.name = name;
         this.HP = HP;
@@ -35,14 +48,17 @@ public class Thief implements RPGCharacter {
     }
 
 
+
     @Override
-    public void attacked() {   // เมื่อเรียกใช้จะลดค่า speed เเละ HP ของตัวละครลดลง
+    public void attacked() {// เมื่อเรียกใช้จะลดค่า speed เเละ HP ของตัวละครลดลง
+
         speed -= 5;
         HP -= 10;
         System.out.println(name + " attacks!");
     }
 
     @Override
+
     public void run() {   // เมื่อเรียกใช้จะลดค่า speed เเละ HP ของตัวละครลดลง
         position += 10;
         System.out.println(name + " is running.");
@@ -54,9 +70,14 @@ public class Thief implements RPGCharacter {
         System.out.println(name + " uses a buff.");
     }
 
+    //----------------------------------------------
+
     @Override
     public void calculateDistance() {// เมื่อเรียกใช้จะเพิ่มขยับ position ของตัวละคร
         position += speed;
         System.out.println(name + " calculates distance.");
     }
+
+}
+
 }
