@@ -1,17 +1,63 @@
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
+import java.util.Scanner;
+interface RPGCharacter {
+    void attacked();
+    void run();
+    void useBuff();
+    void calculateDistance();
+    int getHP();
+    String getName();
+    int getPosition();
+}
+interface Accessory {
+    void applyEffect(RPGCharacter character);
+}
 public class Main {
     public static void main(String[] args) {
-        // Press Alt+Enter with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
-        System.out.print("Hello and welcome!");
+        Scanner scanner = new Scanner(System.in);
 
-        // Press Shift+F10 or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 5; i++) {
+        RPGCharacter p = new Police("Officer Smith", 100, 10, 15, 0);
+        RPGCharacter t = new Thief("Sneaky Pete", 80, 15, 20, 10);
 
-            // Press Shift+F9 to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing Ctrl+F8.
-            System.out.println("i = " + i);
+        // 1st decision : character
+        System.out.println("Choose character: P for Police, T for Thief");
+        String choice = scanner.nextLine();
+        RPGCharacter selectedCharacter = (choice.equalsIgnoreCase("P")) ? p : t;
+
+        // create Accessory in the game
+        Accessory weapon = new Weapon("Gun");
+        Accessory vehicle = new Vehicle("Scooter");
+        Accessory dopeDrink = new DopeDrink("M150");
+
+        // 2nd decision : accessory
+        System.out.println("Choose accessory: W for Weapon, V for Vehicle, D for Dope Drink");
+        choice = scanner.nextLine();
+        Accessory selectedAccessory = switch (choice.toUpperCase()) {
+            case "W" -> weapon;
+            case "V" -> vehicle;
+            case "D" -> dopeDrink;
+            default -> null;
+        };
+
+        if (selectedAccessory != null) {
+            selectedAccessory.applyEffect(selectedCharacter);
         }
+
+          /*  next
+            step1 calculate accessory to increase character's stat
+            step2 choose action
+            step3 check who will win (draft 2 : While (HP some = 0 || distance.t = 100 || diff distance = 0 ){
+                                                    calculateDistance();
+                                                    attack();
+                                                    useBuff();
+                                                    attack();   } )
+         */
+
+        //After this line is 1st draft version >>> can delete with new code>>>>
+        // \/\/\/\/\/\/\/ //
+//        System.out.println("To be Continue...... fighter have time to prepare for their fight!");
+
+//        int distance = 50;
+//
+
     }
 }
